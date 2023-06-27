@@ -3,10 +3,9 @@ from bson.objectid import ObjectId
 
 from pymongo import MongoClient
 
-client = MongoClient(
-    "mongodb+srv://mayvsyanka:1111@cluster0.whgftxb.mongodb.net/hw8_first_part?retryWrites=true&w=majority")
-
-db = client.hw8_first_part
+uri = "mongodb+srv://mayvsyanka:0953194868@mycluster.2qefzpi.mongodb.net/?retryWrites=true&w=majority"
+client = MongoClient(uri)
+db = client.test
 
 with open('homework_10/utils/quotes.json', 'r', encoding='utf-8') as fd:
     quotes = json.load(fd)

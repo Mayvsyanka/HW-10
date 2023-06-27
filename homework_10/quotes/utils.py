@@ -1,13 +1,15 @@
-from pymongo import MongoClient
+import certifi
+from mongoengine import connect
 
 
-def get_mongodb():
 
-    uri = "mongodb+srv://mayvsyanka:1111@cluster0.whgftxb.mongodb.net/hw8_first_part?retryWrites=true&w=majority"
-    client = MongoClient(uri)
-    db = client.hw8_first_part
-    
-    return db
+ca = certifi.where()
+connection = connect(host="mongodb+srv://mayvsyanka:1111@cluster0.whgftxb.mongodb.net/hw8_first_part?retryWrites=true&w=majority",
+            tlsCAFile=ca)
 
-get_mongodb()
+
+
+
+
+
 
